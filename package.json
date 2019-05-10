@@ -1,0 +1,25 @@
+{
+  "name": "node-red-contrib-tcp-ping",
+  "version": "0.0.1",
+  "main": "node-red-tcp-ping.js",
+  "node-red": {
+    "nodes": {
+      "tcp-ping": "node-red-tcp-ping.js"
+    }
+  },
+  "dependencies": {
+    "tcpie": "^7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabbl/node-red-contrib-google-home-notify.git"
+  },
+  "keywords": [
+    "node-red",
+    "iot",
+    "internet of things",
+    "tcp",
+    "ping"
+  ],
+  "description": "Node-Red node for tcpie library. With this node you can test your TCP connections on a specific ip adress"
+}
