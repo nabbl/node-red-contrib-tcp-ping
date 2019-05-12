@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-tcp-ping",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "node-red-tcp-ping.js",
   "node-red": {
     "nodes": {
