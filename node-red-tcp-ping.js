@@ -17,6 +17,8 @@ module.exports = function (RED) {
       const interval = msg.payload.interval || n.interval;
       const timeout = msg.payload.timeout || n.timeout;
 
+      msg.topic = msg.topic || n.topic;
+
     
       const pie = tcpie(ip, parseInt(port), {count: parseInt(count), interval: parseInt(interval), timeout: parseInt(timeout)});
 
@@ -49,6 +51,7 @@ module.exports = function (RED) {
         });
         console.info(stats);
         msg.payload = stats;
+        
         node.send(msg);
         // -> {
         // ->   sent: 10,
