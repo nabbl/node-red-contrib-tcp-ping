@@ -19,7 +19,6 @@ module.exports = function (RED) {
 
       msg.topic = msg.topic || n.topic;
 
-    
       const pie = tcpie(ip, parseInt(port), {count: parseInt(count), interval: parseInt(interval), timeout: parseInt(timeout)});
 
       pie.on('connect', function(stats) {
@@ -28,28 +27,28 @@ module.exports = function (RED) {
           shape: "ring",
           text: "Connecting.."
         });
-        console.info('connect', stats);
+        node.debug(`connect: ${JSON.stringify(stats)}`);
       }).on('error', function(err, stats) {
         node.status({
           fill: "red",
           shape: "ring",
           text: err
         });
-        console.error('error', err);
+        node.error(`error: ${JSON.stringify(stats)}`);
       }).on('timeout', function(stats) {
         node.status({
           fill: "orange",
           shape: "ring",
           text: "Timeout occured"
         });
-        console.info('timeout', stats);
+        node.warning(`timeout: ${JSON.stringify(stats)}`);
       }).on('end', function(stats) {
         node.status({
           fill: "green",
           shape: "ring",
           text: "Finished"
         });
-        console.info(stats);
+        node.debug(`end: ${JSON.stringify(stats)}`);
         msg.payload = stats;
         
         node.send(msg);
