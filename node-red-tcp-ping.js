@@ -48,7 +48,6 @@ module.exports = function (RED) {
           shape: "ring",
           text: "Finished"
         });
-        node.debug(`end: ${JSON.stringify(stats)}`);
         msg.payload = stats;
         
         node.send(msg);
